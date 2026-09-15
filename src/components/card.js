@@ -10,7 +10,14 @@ export default function Card({clase, onPress}) {
             <Image source={{uri: clase.Imagen}}/>
             <View>
                 <EtiquetaNivel nivel= {clase.nivel} />
+                <Text style={styles.Titulo}>{clase.Titulo}</Text>
+                /** se pueden agregar cosas aca a gusto 
+                (precio, nivel, docente)*/
             </View>
         </Pressable>
     )
 }
+
+const styles = StyleSheet.create({
+    Titulo: {fontSize: 16, color: colors.texto}
+})
