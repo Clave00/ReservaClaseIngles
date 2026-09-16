@@ -48,7 +48,8 @@ export default function ClasesScreen({ navigation }) {
                                 activo={nivel === item}
                                 onPress={() => setNivel(item)}
                             />
-                        ))}
+                        ))
+                        }
                     </ScrollView>
                 </ScrollView>
             </View>
