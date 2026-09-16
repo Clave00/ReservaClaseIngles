@@ -84,10 +84,10 @@ export default function DetalleClaseScreen({ route, navigation }) {
                         </Text>
                     </View>
                 </View>
+                
                 {/*
                 boton: que se llame realizar reserva
                 */}
-
                 {/* 
                 objectivo: emule, me sale la tarjeta, 
                 selecciono la tarjeta, y nos lleva a lo que se termino de completar

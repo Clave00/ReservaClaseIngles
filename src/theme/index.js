@@ -7,6 +7,22 @@ export const colors = {
     border: '#e5e7eb'
 };
 
+/**para revisar/agregar 
+ * 
+ * export const colors = {
+    fondo: '#378f4d81',
+    superficie: '#FFFFFF',
+    primario: '#3a4fc4',
+    primarioSuave: '#EEF2FF',
+    texto: '#111827',
+    textoSuave: '#6B7280',
+    borde: '#e5e7eb',
+};
+ * 
+ * 
+*/
+
+
 export const spacing = {
     xs: 4,
     sm: 8,
