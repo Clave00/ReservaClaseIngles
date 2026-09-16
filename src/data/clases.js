@@ -14,7 +14,7 @@ export const CLASES = [
         modalidad: 'Virtual',
         rating: 4.8,
         cupos: 6,
-        horarios: ['Lun 7:00 a.m.', 'Mié 7:00 a.m.', 'Vie 6:00 p.m.'],
+        horarios: [' Lun 7:00 a.m ', ' Mié 7:00 a.m ', ' Vie 6:00 p.m '],
     },
     {
         id: '2',
@@ -29,7 +29,7 @@ export const CLASES = [
         modalidad: 'Virtual',
         rating: 4.9,
         cupos: 4,
-        horarios: ['Mar 6:00 p.m.', 'Jue 6:00 p.m.', 'Sáb 10:00 a.m.'],
+        horarios: [' Mar 6:00 p.m ', 'Jue 6:00 p.m ', 'Sáb 10:00 a.m '],
     },
     {
         id: '3',
@@ -44,7 +44,7 @@ export const CLASES = [
         modalidad: 'Presencial',
         rating: 4.7,
         cupos: 3,
-        horarios: ['Lun 8:00 p.m.', 'Mié 8:00 p.m.'],
+        horarios: ['Lun 8:00 p.m ', 'Mié 8:00 p.m '],
     },
     {
         id: '4',
@@ -59,7 +59,7 @@ export const CLASES = [
         modalidad: 'Virtual',
         rating: 4.6,
         cupos: 8,
-        horarios: ['Mar 7:00 a.m.', 'Jue 7:00 a.m.', 'Sáb 9:00 a.m.'],
+        horarios: ['Mar 7:00 a.m ', 'Jue 7:00 a.m ', 'Sáb 9:00 a.m '],
     },
     {
         id: '5',
@@ -74,7 +74,7 @@ export const CLASES = [
         modalidad: 'Virtual',
         rating: 4.9,
         cupos: 5,
-        horarios: ['Lun 5:00 p.m.', 'Vie 5:00 p.m.'],
+        horarios: ['Lun 5:00 p.m ', 'Vie 5:00 p.m '],
     },
     {
         id: '6',
@@ -89,7 +89,7 @@ export const CLASES = [
         modalidad: 'Presencial',
         rating: 4.8,
         cupos: 4,
-        horarios: ['Mié 6:00 a.m.', 'Vie 6:00 a.m.'],
+        horarios: ['Mié 6:00 a.m ', 'Vie 6:00 a.m '],
     },
     {
         id: '7',
@@ -104,7 +104,7 @@ export const CLASES = [
         modalidad: 'Virtual',
         rating: 4.5,
         cupos: 10,
-        horarios: ['Jue 7:00 p.m.', 'Sáb 11:00 a.m.'],
+        horarios: ['Jue 7:00 p.m ', 'Sáb 11:00 a.m '],
     },
     {
         id: '8',
@@ -119,7 +119,7 @@ export const CLASES = [
         modalidad: 'Virtual',
         rating: 4.7,
         cupos: 7,
-        horarios: ['Mar 8:00 p.m.', 'Sáb 8:00 a.m.'],
+        horarios: ['Mar 8:00 p.m ', 'Sáb 8:00 a.m '],
     },
 ];
 
