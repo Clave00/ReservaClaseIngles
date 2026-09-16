@@ -1,45 +1,49 @@
-import React, { useState, useMemo, useLayoutEffect } from 'react';
-import { View, Text, TextInput, Alert, ScrollView, StyleSheet, Image } from 'react-native';
+import React, { useLayoutEffect } from 'react';
+import { View, ScrollView, StyleSheet, Image } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { ioncons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 import useResponsive from '../hooks/useResponsive';
 import { colors, spacing, radius, typography } from '../theme';
 import { formatearPrecio } from '../data/clases';
 
 export default function DetalleClaseScreen({ route, navigation }) {
     const insets = useSafeAreaInsets();
-    const {clase} = route.params;
+    const { clase } = route.params;
     const { isTablet } = useResponsive();
 
-    useLayoutEffect(()=>{
-        //unicamente se usara cuando haya apartado de navegacion
-        navigation.setOptions({title: clase.titulo});
-    },[navigation, clase.titulo])
+    useLayoutEffect(() => {
+        // unicamente se usara cuando haya apartado de navegacion
+        navigation.setOptions({ title: clase.titulo });
+    }, [navigation, clase.titulo]);
 
     return (
-        <View style={styles.pantalla}> 
+        <View style={styles.pantalla}>
             <ScrollView
-            contentContainerStyle={{paddingBottom: 120}}
-            showsVerticalScrollIndicator={false}
-            > 
-                <image
-                    source={{uri: clase.imagen}}
-                    style={[styles.portada, { height: isTablet ? 380: 200}]}
+                contentContainerStyle={{ paddingBottom: 120 }}
+                showsVerticalScrollIndicator={false}
+            >
+                <Image
+                    source={{ uri: clase.imagen }}
+                    style={[styles.portada, { height: isTablet ? 380 : 200 }]}
                     resizeMode="cover"
                 />
-                /**nombre del profesor completo | al lado la foto
+                {/* 
+                nombre del profesor completo | al lado la foto
                 descripcion
                 precio
                 duracion
                 cupos
                 horario
-                boton: que se llame realizar reserva*/
+                boton: que se llame realizar reserva
+                */}
 
-                // objectivo: emule, me sale la tarjeta, 
-                //selecciono la tarjeta, y nos lleva a lo que se termino de completar
+                {/* 
+                objectivo: emule, me sale la tarjeta, 
+                selecciono la tarjeta, y nos lleva a lo que se termino de completar
+                */}
             </ScrollView>
         </View>
-    )
+    );
 }
 
 const styles = StyleSheet.create({
