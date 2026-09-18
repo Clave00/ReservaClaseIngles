@@ -1,5 +1,5 @@
-import React, { useLayoutEffect } from 'react';
-import { View, ScrollView, StyleSheet, Image, Text, Pressable, BackHandler } from 'react-native';
+import React, { useLayoutEffect, useState } from 'react';
+import { View, ScrollView, StyleSheet, Image, Text, Pressable, Alert } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import useResponsive from '../hooks/useResponsive';
@@ -11,13 +11,34 @@ export default function DetalleClaseScreen({ route, navigation }) {
     const { clase } = route.params;
     const { isTablet } = useResponsive();
 
+    const [cuposDisponibles, setCuposDisponibles] = useState(clase.cupos);
+
     useLayoutEffect(() => {
         // unicamente se usara cuando haya apartado de navegacion
         navigation.setOptions({ title: clase.titulo });
     }, [navigation, clase.titulo]);
 
+    const confirmarReserva = () => {
+        Alert.alert(
+            'Confirmar reserva',
+            '¿Seguro de reservar esta clase?',
+            [
+                {
+                    text: 'Cancelar',
+                    style: 'cancel',
+                },
+                {
+                    text: 'Aceptar',
+                    onPress: () => {
+                        setCuposDisponibles(cuposDisponibles - 1);
+                    },
+                },
+            ]);
+    };
+
+
     return (
-        <View style={styles.pantalla}>
+        <View style={styles.pantalla} >
             <ScrollView
                 contentContainerStyle={{ paddingBottom: 120 }}
                 showsVerticalScrollIndicator={false}
@@ -69,7 +90,7 @@ export default function DetalleClaseScreen({ route, navigation }) {
                             Cupos
                         </Text>
                         <Text style={styles.datoValor}>
-                            {clase.cupos}
+                            {cuposDisponibles}
                         </Text>
                     </View>
                 </View>
@@ -84,7 +105,7 @@ export default function DetalleClaseScreen({ route, navigation }) {
                         </Text>
                     </View>
                 </View>
-                
+
                 {/*
                 boton: que se llame realizar reserva
                 */}
@@ -98,7 +119,7 @@ export default function DetalleClaseScreen({ route, navigation }) {
                 <Text style={styles.precio}>
                     {formatearPrecio(clase.precio)}
                 </Text>
-                <Pressable style={styles.reserva} onPress={() => { }}>
+                <Pressable style={styles.reserva} onPress={confirmarReserva}>
                     <Text style={styles.datoValor}>Reservar</Text>
                 </Pressable>
             </View>
