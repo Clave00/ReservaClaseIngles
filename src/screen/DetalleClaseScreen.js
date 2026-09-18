@@ -19,6 +19,10 @@ export default function DetalleClaseScreen({ route, navigation }) {
     }, [navigation, clase.titulo]);
 
     const confirmarReserva = () => {
+        if (cuposDisponibles === 0) {
+            Alert.alert('Sin cupos', 'No hay más cupos disponibles para esta clase.');
+            return;
+        }
         Alert.alert(
             'Confirmar reserva',
             '¿Seguro de reservar esta clase?',
@@ -115,7 +119,7 @@ export default function DetalleClaseScreen({ route, navigation }) {
                 */}
             </ScrollView>
 
-            <View style={styles.barra}>
+            <View style={[styles.barra, { paddingBottom: spacing.lg + insets.bottom }]}>
                 <Text style={styles.precio}>
                     {formatearPrecio(clase.precio)}
                 </Text>
@@ -162,7 +166,6 @@ const styles = StyleSheet.create({
         borderTopWidth: 1,
         borderTopColor: colors.borde,
         paddingVertical: spacing.lg,
-        paddingTop: spacing.lg
     },
     precio: { fontSize: 18, fontWeight: '800', color: colors.primario },
     reserva: {

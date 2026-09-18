@@ -13,7 +13,7 @@ export default function ClasesStack() {
             <Stack.Screen
                 name="Home"
                 component={ClasesScreen}
-                options={{headerShown: false}}
+                options={{headerShown: true}}
             />
             <Stack.Screen
                 name="DetalleClase"
