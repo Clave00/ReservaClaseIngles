@@ -33,15 +33,3 @@ export default function useAlmacenamiento(clave, valorInicial) {
 
     return { valor, listo, actualizar };
 }
-
-const actualizar = useCallback(
-    async (nuevoValor) => {
-        setValor(nuevoValor);
-        try {
-            await AsyncStorage.setItem(clave, JSON.stringify(nuevoValor))
-        } catch (error) {
-            console.log('Error Guardando' + clave, error)
-        }
-    }, [clave]
-);
-};
