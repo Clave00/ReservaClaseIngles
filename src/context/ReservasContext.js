@@ -48,22 +48,17 @@ export function ReservaProvider({ children }) {
         let resultado = { ok: true };
         setReservas((previa) => {
             if (previa.some((r) => r.id === nueva.id)) {
-                resultados = { ok: false, mensaje: 'Data duplicada' }
+                resultado = { ok: false, mensaje: 'Data duplicada' }
                 return previa;
             };
             return [nueva, ...previa];
         });
-        return resultados;
+        return resultado;
     }, []);//cierra el callback
 
-        //*metodo cancelar reserva entra en el taller*
+    //*metodo cancelar reserva entra en el taller*
 
     const valor = useMemo(
-        ()=>{reservas, cargando, agregarReserva},[reservas, cargando, agregarReserva]
+        () => ({ reservas, cargando, agregarReserva }), [reservas, cargando, agregarReserva]
     );
-
-    return <ReservasContext.Provider value={valor}> {children} </ReservasContext.Provider>
-
-
-
 }//Esta es la llave que cierra para la funcion
