@@ -61,4 +61,9 @@ export function ReservaProvider({ children }) {
     const valor = useMemo(
         () => ({ reservas, cargando, agregarReserva }), [reservas, cargando, agregarReserva]
     );
+    return (
+        <ReservasContext.Provider value={valor}>
+            {children}
+        </ReservasContext.Provider>
+    );
 }//Esta es la llave que cierra para la funcion
